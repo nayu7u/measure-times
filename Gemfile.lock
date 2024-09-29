@@ -96,6 +96,13 @@ GEM
       reline (>= 0.3.8)
     diff-lcs (1.5.1)
     drb (2.2.1)
+    erb_lint (0.6.0)
+      activesupport
+      better_html (>= 2.0.1)
+      parser (>= 2.7.1.4)
+      rainbow
+      rubocop (>= 1)
+      smart_properties
     erubi (1.13.0)
     factory_bot (6.5.0)
       activesupport (>= 5.0.0)
@@ -204,6 +211,7 @@ GEM
     regexp_parser (2.9.2)
     reline (0.5.10)
       io-console (~> 0.5)
+    rexml (3.3.6)
     rspec-core (3.13.1)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.3)
@@ -313,10 +321,12 @@ DEPENDENCIES
   bootsnap
   brakeman
   debug
+  erb_lint
   factory_bot_rails
   importmap-rails
   puma (>= 5.0)
   rails (~> 7.2.1)
+  rexml
   rspec-rails
   rubocop-rails-omakase
   sprockets-rails

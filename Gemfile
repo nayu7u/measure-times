@@ -52,6 +52,10 @@ group :development, :test do
 
   # check html
   gem "better_html"
+
+  # lint erb
+  gem "erb_lint", require: false
+  gem "rexml" # avoid LoadError
 end
 
 group :development do
