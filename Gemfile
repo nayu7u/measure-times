@@ -49,6 +49,9 @@ group :development, :test do
 
   # test data
   gem "factory_bot_rails"
+
+  # check html
+  gem "better_html"
 end
 
 group :development do
