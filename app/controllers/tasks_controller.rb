@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
+  before_action :set_tasks, only: %i[ new show edit update destroy ]
 
   # GET /tasks
   def index
@@ -24,7 +25,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
 
     if @task.save
-      redirect_to @task, notice: "Task was successfully created."
+      redirect_to new_task_path, notice: "Task was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
@@ -49,6 +50,10 @@ class TasksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_task
       @task = Task.find(params[:id])
+    end
+
+    def set_tasks
+      @tasks = Task.all.order(id: :desc)
     end
 
     # Only allow a list of trusted parameters through.

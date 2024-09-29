@@ -3,5 +3,14 @@
 
   <%= render "form", task: @task %>
 
-  <%= link_to "Back to tasks", tasks_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  <div id="tasks" class="min-w-full">
+    <% @tasks.each do |task| %>
+      <div class="flex my-5">
+        <%= render task %>
+        <div>
+          <%= link_to "Show this task", task, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
