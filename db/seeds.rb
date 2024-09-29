@@ -7,3 +7,12 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+(1..5).each do |i|
+  Task.create!(
+    name: "test#{i}",
+    starts_on: Time.zone.today,
+    starts_at: Time.zone.now.since(i * 600),
+    ends_at: Time.zone.now.since((i + 1) * 600),
+  )
+end
